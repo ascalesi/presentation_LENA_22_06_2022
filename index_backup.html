@@ -1,0 +1,683 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/sky.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+<head>
+<style>
+figcaption { caption-side: bottom ;  font-size: 15px; line-height: 0;}
+ul { font-size: 20px; line-height: 2;}
+p    {font-family: charter; color: black;}
+h3 {text-transform: Capitalize !important; letter-spacing: 0.5px !important;}
+h4 {text-transform: Capitalize !important; letter-spacing: 0.5px !important;}
+section    {font-family: charter; color: black;}
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+</style>
+</head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+	<section>
+	  <h3 style="font-family: charter"><b>Deformed Gorkov Self-consistent Green's functions for nuclear structure calculations</b></h3>
+	  <p>Alberto Scalesi</p>  <p style="font-size: 25px;">(CEA/IRFU/DPhN)</p>
+	  <p style="font-size: 20px">13 May 2022</p>
+	</section>
+
+	<section data-background-image="media/slide.png" data-background-size="1300px">
+	</section>
+
+<!--
+	<section data-auto-animate>
+	  <h4 style="font-family: charter">Ab initio methods</h4>
+	  <img src="media/AbInitio.pdf" width="500">
+	  <figcaption>Ground-state energies in the Oxygen isotopic chain for different <em>Ab Initio methods</em></figcaption>
+	</section>
+
+	<section   data-visibility="uncounted" data-auto-animate>
+	  <h4 style="font-family: charter">Ab initio methods</h4>
+	  <figure width="500" style="float:left">
+	  <img src="media/AbInitio.pdf" width="500">
+	  </figure>
+	  <ul width: 1px>
+	    <br><br>
+  	    <li class="fragment">Controllable and sistematically <br/>improvable predictions<br/></li>
+  	    <li class="fragment">Directly linked with the fundamental <br/> theory of QCD<br/></li>
+  	    <li class="fragment">Give reliable predictions for nuclei <br/>that are not experimentally accessible<br/></li>
+	  </ul>
+	</section>
+
+	<section  data-visibility="uncounted" data-auto-animate>
+	  <h4 style="font-family: charter">Ab initio methods</h4>
+	  <figure width="500" style="float:left">
+	  <img src="media/AbInitio.pdf" width="500">
+	  </figure>
+	  <ul width: 1px>
+	    <br><br>
+  	    <li> Controllable and sistematically <br/>improvable predictions<br/></li>
+  	    <li> Directly linked with the fundamental <br/> theory of QCD<br/></li>
+  	    <li> Give reliable predictions for nuclei <br/>that are not experimentally accessible<br/></li>
+	  </ul>
+	  <br><br><br><p  style="font-size: 20px">&#8594; Common goal: to solve the Many-Body Schroedinger equation:
+	  \[\begin{aligned}
+	  H\ket{\psi_k^A} = E_k\psi_k^A \\
+	  \end{aligned} \]</p>
+	</section>
+-->
+
+	<section>
+	  <h4 style="font-family: charter">
+	  Ab-initio methods</h4>
+	    <ul>
+	      <li class="fragment">aim to solve the many-body Schroedinger equation
+	      \[\begin{aligned}
+	  H\ket{\Psi_k^A} = E_k\ket{\Psi_k^A} \\
+	  \end{aligned} \]
+	      </li>
+	      <li class="fragment">exact treatment possible only for few methods but limited to light nuclei
+	        <ul>
+		  <li class="fragment">NCSM, CI &nbsp;&nbsp;&nbsp;&#8594;&nbsp;&nbsp;&nbsp; <em>factorial</em> scaling $N!$ &nbsp;&nbsp;&nbsp;($N$: Hilbert space size)</li>
+		  <li class="fragment">Montecarlo &nbsp;&nbsp;&nbsp;&#8594;&nbsp;&nbsp;&nbsp; <em>exponential</em> scaling $2^N$</li>
+		</ul>
+		</li>
+	      <li class="fragment">correlation-expansion methods to tackle heavier systems
+	       <ul>
+		  <li class="fragment">CC, BMBPT, SCGF &nbsp;&nbsp;&nbsp;&#8594;&nbsp;&nbsp;&nbsp; <em>polynomial</em> scaling $N^p$
+		  </li>
+		</ul>
+		</li>
+	    </ul>
+	  <img class="fragment" src="media/tichai.png" width="330" class="center">
+	</section>
+
+	<section data-auto-animate>
+	  <h4 style="font-family: charter">
+	  <span style="color: #000000">Self-consistent</span>
+	  Green's functions (SCGF)</h4>
+	</section>
+
+	<section data-auto-animate data-visibility="uncounted">
+	  <h4 style="font-family: charter">
+	  <span style="color: #ff0000">Self-consistent</span>
+	  Green's functions (SCGF)</h4>
+	</section>
+
+	<section data-auto-animate data-visibility="uncounted">
+	  <h4 style="font-family: charter">
+	  <span style="color: #ff0000">Self-consistent</span>
+	  Green's functions (SCGF)</h4>
+	  <p style="font-size: 25px;">State-of-the-art:<br></p>
+	  <ul>
+	    <li class="fragment"> Dyson SCGF theory (early 2000)</li>
+	    <ul>
+	      <li class="fragment">doubly-closed shell<br></li>
+	      <li class="fragment">3-body forces (2013)</li>
+	      <li class="fragment">high-precision many-body truncation (ADC(3), 2018)</li>
+	    </ul>
+	  </ul>
+	</section>
+
+	<section data-auto-animate data-visibility="uncounted">
+	  <h4 style="font-family: charter">
+	  <span style="color: #ff0000">Self-consistent</span>
+	  Green's functions (SCGF)</h4>
+	  <p style="font-size: 25px;">State-of-the-art:<br></p>
+	  <ul>
+	    <li> Dyson SCGF theory (early 2000)</li>
+	    <ul>
+	    <li>doubly-closed shell<br></li>
+	      <li>3-body forces (2013)</li>
+	      <li>high-precision many-body truncation (ADC(3), 2018)</li>
+	    </ul>
+	    <li> Gorkov SCGF theory (2011)</li>
+	    <ul>
+	      <li class="fragment">singly-open shell nuclei</li>
+	        <li class="fragment">breaking of the particle number symmetry $U(1)$ to
+		  include pairing correlations<br>
+		  \[\begin{aligned}
+		  \ket{\Psi_0} \equiv \sum_N^{even}c_N\Psi_0^N \\
+		  \end{aligned} \]
+	        </li>
+              <li class="fragment">ADC(2) many-body truncation</li>
+	    </ul>
+	  </ul>
+	</section>
+
+	<section data-auto-animate data-visibility="uncounted">
+	  <h4 style="font-family: charter">
+	  <span style="color: #ff0000">Self-consistent</span>
+	  Green's functions (SCGF)</h4>
+	<p style="font-size: 25px;">State-of-the-art:<br></p>
+	<ul>
+	  <li> Dyson SCGF theory (early 2000)</li>
+	  <ul>
+	    <li>doubly-closed shell<br></li>
+	    <li>3-body forces (2013)</li>
+	    <li>high-precision many-body truncation (ADC(3), 2018)</li>
+	  </ul>
+	  <li> Gorkov SCGF theory (2011)</li>
+	  <ul>
+	    <li>singly-open shell nuclei</li>
+	    <li>breaking of the particle number symmetry $U(1)$ to
+		include pairing correlations<br>
+		\[\begin{aligned}
+		\ket{\Psi_0} \equiv \sum_N^{even}c_N\Psi_0^N \\
+		\end{aligned} \]
+	    </li>
+	  <li>ADC(2) many-body truncation</li>
+	  </ul>
+	  </ul>
+	    <p style="font-size: 20px;">Based on spherical HF/HFB states, current codes in $J$-scheme</p>
+	</section>
+
+	<section>
+	  <h4 style="font-family: charter">
+	  Building blocks of SCGF</h4>
+	  <ul width: 1px>
+  	  <li class="fragment">
+	  <span style="color: #15A22A">One-body Green's function</span><br>
+	  \[\begin{aligned}
+	  i\hbar g_{\alpha\beta}(t-t') = \braket{\Psi_0^A | \mathcal{T}[a_\alpha(t)a_\beta^\dagger(t')]|\Psi_0^A}
+	  \end{aligned} \]
+	  </li>
+  	  <li class="fragment">
+	  <span style="color: #205EA4">Dyson equation</span><br>
+	  \[\begin{aligned}
+	  g_{\alpha\beta}(\omega) = g_{\alpha\beta}^{(0)}(\omega) + \sum_{\gamma\delta} g_{\alpha\gamma}^{(0)}(\omega)\Sigma_{\gamma\delta}^\star(\omega)g_{\delta\beta}(\omega)
+	  \end{aligned} \]
+	  </li>
+	  <ul>
+	    <li  class="fragment">
+	      Self-energy $\Sigma^\star_{\alpha\beta}(\omega)$   &nbsp;&nbsp;&nbsp;&#8594;&nbsp;&nbsp;&nbsp; effective 1B potential
+	    </li>
+	  </ul>
+	  </ul>
+  	  <p class="fragment"  style="font-size: 20px;">
+	    Analogous to the <span style="color: #15A22A">wave function</span> and the <span style="color: #205EA4">MB Schroedinger equation</span> in other <em>ab-initio</em> methods
+	  </p>
+	</section>
+
+		  <section data-auto-animate >
+		     <h4 style="font-family: charter">
+		     Accessible quantities from SCGF</h4>
+		     <ul width: 1px>
+  		       <li class="fragment">
+		       From the one-body Green's function (Lehmann's representation):<br>
+		         \[\begin{aligned}
+			 g_{\alpha\beta}(E) = \sum_n \dfrac{\braket{\Psi_0^A|c_\alpha|\Psi_n^{A+1}}\braket{\Psi_n^{A+1}|c_\beta^\dagger|\Psi_0^A}}{E-\textcolor{red}{(E_n^{A+1}-E_0^A)}+i\eta}\\
+			 + \sum_k \dfrac{\braket{\Psi_0^A|c_\beta^\dagger|\Psi_n^{A-1}}\braket{\Psi_k^{A-1}|c_\alpha|\Psi_0^A}}{E-(\textcolor{red}{E_0^A-E_k^{A+1}})-i\eta}
+			 \end{aligned} \]
+		       </li>
+		     <ul>
+		       <li class="fragment">
+			 total binding energy (GMK sum rule)
+		       </li>
+		       <li class="fragment">
+		         matter/charge radii
+		       </li>
+		       <li class="fragment">
+			 transition amplitudes for addition/removal of one particle (odd-even nuclei)
+		       </li>
+		       <li class="fragment">
+			 current efforts in Saclay to extend to even-even nuclei (G. Stellin)
+		       </li>
+		       <li class="fragment">
+			 <span style="color: #FF0000">separation energies</span> between even-even $A$ and odd-even $A\pm1$
+		       </li>
+		     </ul>
+  		     <li class="fragment">
+		       From the two-body Green's function&nbsp;&#8594;&nbsp;excited states of even-even $A$<br>
+		     </li>
+		     <li class="fragment">
+		       From the self-energy&nbsp; &#8594;&nbsp; optical potentials for nucleon-nucleus scattering<br>
+		     </li>
+		     </ul>
+		   </section>
+
+		   <section>
+		     <h4 style="font-family: charter">
+		     Excitation spectra of nuclei</h4>
+		     <figure width="500">
+		     <img src="media/Nov.png" width="900">
+		     <figcaption>One-neutron removal and addition spectra from and to <sup>48</sup>Ca with NNLO<sub>sat</sub> and NN+3N(lnl) interactions (PRC 101, 014318)</figcaption>
+		     </figure>
+		   </section>
+
+		   <section data-auto-animate>
+		     <h4 style="font-family: charter">
+		     Optical potentials</h4>
+		   </section>
+
+		   <section data-auto-animate   data-visibility="uncounted" >
+		     <h4 style="font-family: charter">
+		     Optical potentials</h4>
+		     <ul data-id="box">
+		     <li class="fragment">
+		       Feshbach's theory of the optical potential (1958)
+		       <ul>
+			 <li class="fragment">
+			   tool to describe the nucleon-nucleus scattering
+			 </li>
+			 <li class="fragment">
+			   partitions Hilbert space $\mathcal{H}$ in a subspace constituted by one particle added to a core nucleus
+			 </li>
+		       </ul>
+		       </li>
+		       <li class="fragment">
+		         Optical potential: effective interaction that includes the effect of the remaining part of $\mathcal{H}$
+			 </li>
+			 <li class="fragment">
+			   Extension of Feshabch's theory to the possibility of propagating a hole excitation			 
+			 <p><center><big><big><big><big>&#8595;</big></big></big></big></center></p>
+			 <p style="font-size: 20px"><center>optical potential $\equiv$ irreducible self-energy at positive energy $\Sigma^\star$</center></p>
+			 </li>
+			 </ul>
+		       </section>
+
+
+		       <section data-auto-animate>
+		         <h4 style="font-family: charter">
+			   Optical potentials</h4>
+			 <ul>
+		           <li data-id="box" class="fragment">
+			     <em>Ab initio</em> not yet precise enough to contribute to reaction calculations
+			   </li>
+		           <li data-id="box" class="fragment">
+			     Their role with optical potential can still be employed as a guide for phenomenological models
+			   <ul>
+			     <li>
+			       dependence on the orbital angular momenta $l$
+			     </li>
+			     <li>
+			       extract parametrization as a function of the isospin
+			     </li>
+			   </ul>
+			   </li>
+		           <li data-id="box" class="fragment">
+			     Current applications limited to doubly closed-shell nuclei
+			   </li>
+		           <li data-id="box" class="fragment">
+			     Volume integrals &nbsp; &#8594;&nbsp; reliable measure of the total strength of a potential
+		         \[\begin{aligned}
+			   J_W^l(E) = 4\pi \int dr r^2 \int dr' {r'}^2 Im \Sigma_0^l(r,r';E)
+			 \end{aligned} \]
+			   </li>
+		           <li data-id="box" class="fragment">
+			     Volume integrals averaged on the number of partial-waves $N_{\{l\}}$
+		         \[\begin{aligned}
+			   J_W^{avg}(E) = \dfrac{1}{N_{\{l\}}} \sum_{l\in\{l\}}J_W^l(E)
+			 \end{aligned} \]
+			   </li>
+		         </ul>
+		       </section>
+
+			 <section data-auto-animate>
+			   <h4 style="font-family: charter">
+			   Optical potentials</h4>
+		           <figure width="400">
+			   <img src="media/SE.png" width="700">
+			   <figcaption>Separate pw contributions of $J_W$ averaged over $l$-channels with same number of HO orbits in the model space, <sup>40</sup>Ca (PRC 84, 034616)</figcaption>
+			   </figure>
+		         </section>
+
+			 <section data-auto-animate>
+			   <h4 style="font-family: charter">
+			   Future developments in the SCGF theory</h4>
+		         </section>
+
+			 <section data-auto-animate   data-visibility="uncounted" >
+			   <h4 style="font-family: charter">
+		           Future developments in the SCGF theory</h4>
+			   <ul data-id:"box">
+			     <p style="font-size: 20px">
+			       Most of the nuclei are doubly-open shell &nbsp; &#8594;&nbsp; necessity of describing them as deformed
+			     </p>
+			   </ul>
+		         </section>
+
+			 <section   data-visibility="uncounted" data-auto-animate>
+			 <h4 style="font-family: charter">Future developments in the SCGF theory</h4>
+			     <p style="font-size: 20px">
+			       Most of the nuclei are doubly-open shell &nbsp; &#8594;&nbsp; necessity of describing them as deformed
+			     </p>
+			 <figure width="500">
+			   <img src="media/bender.png" width="650">
+			   </figure>
+			   <figcaption>Deformation of the mean-field ground state resulting from EDF calculation (Bender et al., PRC C73, 034322)</figcaption>
+			 </section>
+
+			 <section>
+			   <h4 style="font-family: charter">Deformed Gorkov SCGF theory</h4>
+			   <ul>
+			     <li class="fragment"> Applicable to doubly open-shell nuclei</li>
+			     <li class="fragment"> Based on single-reference state breaking rotational symmetry $SO(3)$</li>
+			     <li class="fragment"> Built on top of a deformed-HFB solution (calculated with the HFB3-SIMPLE code)</li>
+			     <li class="fragment"> Eventually the rotational symmetry must be restored</li>
+		 	     <li class="fragment"> Exploit the expansion of the Hamiltonian on a natural basis</li>
+		 	     <li class="fragment"> Three-body forces included through normal-ordering (NO)</li>
+			     <li class="fragment"> Based on an $m$-scheme code</li>
+			   </ul>
+		         </section>
+
+
+			 <section   data-visibility="uncounted" data-auto-animate>
+			   <h4 style="font-family: charter">Size of the one-body basis</h4>
+			   <figure width="500">
+			     <img src="media/table2.png" width="630">
+			   </figure>
+			 </section>
+
+			 <section   data-visibility="uncounted" data-auto-animate>
+			   <h4 style="font-family: charter">Size of the one-body basis</h4>
+	  		   <figure width="500" style="float:left">
+			     <img src="media/table2.png" width="500">
+			   </figure>
+	  		     <ul width: 1px  style="float:right"  style="font-size: 5px">
+			       <br>
+  	    		       <li class="fragment">cannot exploit spherical symmetry</li>
+  	    		       <li class="fragment">~10x basis states $N$ at $e_{max}=12$</li>
+  	    		       <li class="fragment">axial symmetry halves $N$</li>
+  	    		       <li class="fragment">expansion methods scale as $N^p$</li>
+  	    		       <li class="fragment">for fixed $p$, $N$ must be decreased</li>
+			       <ul>
+				 <li class="fragment">
+				   importance truncation IT (A. Porro)
+				 </li>
+				 <li class="fragment">
+				   deformed bases
+				 </li>
+				 <li class="fragment">
+				   natural orbitals (NAT)
+				 </li>
+			       </ul>
+	  		   </ul>
+			 </section>
+
+			 <section data-auto-animate   data-visibility="uncounted">
+			   <h4 style="font-family: charter">Deformed bases</h4>
+			   <p class="fragment"  style="font-size: 20px">Goal of the test: explore the advantage of deformed bases in beyond mean-field methods</p>
+			   <p style="font-size: 25px"  class="fragment">Definition of basis parameters</p>
+			   <ul>
+			     <li class="fragment">
+			       Axially-deformed HO bases obtained from the ME of SHO basis via unitary transform
+			     </li>
+			     <li class="fragment">
+			       Deformed bases characterized by a parameter $Q={b_\rho}/{b_z}$
+			     </li>
+			     <li class="fragment">
+			       $e_{max}$: truncation of the spherical basis before the unitary transform
+			     </li>
+			     <li class="fragment">
+			       $n_{oscill}$: number of shell of the deformed HO; for fixed $Q$ it fixes the number of states in the basis
+			     </li>
+			   </ul>
+			   <p style="font-size: 25px" class="fragment">Plan</p>
+			   <ul>
+			     <li class="fragment">
+			       Calculation of the GS energy as a function of the number of states for different deformed bases
+			     </li>
+			     <li class="fragment">
+			       $\beta_2$-constrained calculation of the energy for different bases respect to a reference energy $E_{ref}$
+			     </li>
+			     <li class="fragment">
+			       On top of the HFB calculations we repeat the same two plots for BMBPT(2)
+			     </li>
+			     <li class="fragment">
+			       $E_{ref}$ lowest energy for $e_{max}=12$, $n_{oscill}=12$ between various deformed bases, converged:
+			       <ul>
+				 <li style="font-size: 15px">
+				   |$\min_{Q\in\{Q\}}E^{HFB}-\max_{Q\in\{Q\}}E^{HFB}$| < 5 MeV
+				 </li>
+				 <li style="font-size: 15px">
+				   |$\min_{Q\in\{Q\}}E^{BMBPT}-\max_{Q\in\{Q\}}E^{BMBPT}$| < 20 MeV
+				 </li>
+			       </ul>
+			     </li>
+			   </ul>
+			 </section>
+
+			 <section data-auto-animate   data-visibility="uncounted">
+			   <h4 style="font-family: charter">Deformed bases</h4>
+	  		   <figure width="500">
+			     <img src="media/HFB.png" width="400" style="float:left">
+			     <img src="media/HFB.png" width="400" style="float:right">
+			   </figure>
+			   <ul>
+			     <li>
+			       asdasdopj
+			     </li>
+			     <li>
+			       asdasdopj
+			     </li>
+			     <li>
+			       asdasdopj
+			     </li>
+			   </ul>
+			 </section>
+
+			 <section data-auto-animate   data-visibility="uncounted">
+			   <h4 style="font-family: charter">Deformed bases</h4>
+	  		   <figure width="500">
+			     <img src="media/HFB.png" width="400" style="float:left">
+			     <img src="media/HFB.png" width="400" style="float:right">
+			   </figure>
+			   <ul>
+			     <li>
+			       asdasdopj
+			     </li>
+			     <li>
+			       asdasdopj
+			     </li>
+			     <li>
+			       asdasdopj
+			     </li>
+			   </ul>
+			 </section>
+
+
+			 <section data-auto-animate   data-visibility="uncounted">
+			   <h4 style="font-family: charter">Deformed bases</h4>
+	  		   <figure width="500">
+			     <img src="media/HFB.png" width="500">
+			   </figure>
+			   <figcaption>$\beta_2$-constrained HFB calculation of the GS energy of <sup>56</sup>Fe respect to the converged energy $E_{ref}$ for different $Q$s</figcaption>
+			 </section>
+
+			 <section data-auto-animate   data-visibility="uncounted" >
+			   <h4 style="font-family: charter">Deformed bases</h4>
+	  		   <figure width="400">
+			     <img src="media/HFB.png" width="400" style="float:left">
+			   </figure>
+			     <ul width: 1px  style="float:right"  style="font-size: 5px">
+			       <br><br>
+  	    		       <li class="fragment">Main parameters of the calculation:</li>
+			       <ul>
+  	    		       <li class="fragment">$e_{max}=12$ (truncation on spherical basis)</li>
+  	    		       <li class="fragment">$n_{oscill}=6$ (truncation on deformed basis)</li>
+  	    		       <li class="fragment">$Q = b_\rho/b_z$: deformation parameter of the CHO</li>
+			       </ul>
+  	    		       <li class="fragment">Significant advantage of deformed bases for high $\beta_2$</li>
+	  		   </ul>
+			 </section>
+
+			 <section data-auto-animate   data-visibility="uncounted" >
+			   <h4 style="font-family: charter">Deformed bases</h4>
+	  		   <figure width="400">
+			     <img src="media/HFB.png" width="400" style="float:left">
+			   </figure>
+			     <ul width: 1px  style="float:right"  style="font-size: 5px">
+			       <br><br>
+  	    		       <li>Main parameters of the calculation:</li>
+			       <ul>
+  	    		       <li>$e_{max}=12$ (truncation on spherical basis)</li>
+  	    		       <li>$n_{oscill}=6$ (truncation on deformed basis)</li>
+  	    		       <li>$Q = b_\rho/b_z$: deformation parameter of the CHO</li>
+			       </ul>
+  	    		       <li>Significant advantage of deformed bases for high $\beta_2$</li>
+	  		   </ul>
+			   <br><br><br><br><br><br><br>
+			   <p style="font-size: 25px">&#8594;&nbsp;Benefits for several branches in the HFB3-SIMPLE code</p>
+			 </section>
+
+
+			 <section data-auto-animate>
+			   <h4 style="font-family: charter">Deformed Bases</h4>
+			       <p style="font-size: 23px">Test now the advantage on a beyond HFB method</p>
+  	    		       <p style="font-size: 20px">BMBPT is ideal:</p>
+			       <ul>
+			       <li class="fragment">
+				 cheap beyond mean-field method
+			       </li>
+			       <li class="fragment">
+				 characterized by high particle-hole excitations
+			       </li>
+			       <li class="fragment">
+				 already included in the HFB3-SIMPLE code
+			       </li>
+			       </ul>
+			 </section>
+
+			 <section data-auto-animate>
+			   <h4 style="font-family: charter">Deformed bases</h4>
+	  		   <figure width="550">
+			     <img src="media/BMBPT.png" width="550">
+			   </figure>
+			   <figcaption>$\beta_2$-constrained BMBPT(2) calculation of the GS energy of <sup>56</sup>Fe</figcaption>
+			 </section>
+
+			 <section data-auto-animate>
+		           <h4 style="font-family: charter">Natural basis</h4>
+			  </section>
+
+			 <section data-auto-animate>
+		           <h4 style="font-family: charter">Natural basis</h4>
+			   <p style="font-size: 20px">Basis informed by MB correlations suited to efficiently capture correlations in the wave-functions</p>
+			  </section>
+
+			 <section data-auto-animate>
+		           <h4 style="font-family: charter">Natural basis</h4>
+			   <p style="font-size: 20px">Basis informed by MB correlations suited to efficiently capture correlations in the wave-functions</p>
+			   <ul>
+			     <li class="fragment">
+			       Main objective: reduce an expensive calculation to a coastless theory
+			     </li>
+			     <li class="fragment">
+			       How it can be done: via an auxiliary cheaper calculation
+			     </li>
+			   </ul>
+			   <p style="font-size: 18px" class="fragment">First possibility</p> 
+			   <p style="font-size: 18px" class="fragment">
+			     $V_{ijkl}$ HO ME &nbsp;&#8594;&nbsp; Mean-Field calculation &nbsp;&#8594;&nbsp; extract HF basis &nbsp;&#8594;&nbsp; expand $H$ on HF basis
+			   </p> 
+			   <p style="font-size: 18px" class="fragment">Second possibility</p> 
+			   <p style="font-size: 18px" class="fragment">
+			     $V_{ijkl}$ HO ME &nbsp;&#8594;&nbsp; cheap beyond mean-field calculation ((B)MBPT) &nbsp;&#8594;&nbsp; diagonalization of the density-matrix
+			   <p style="font-size: 18px" class="fragment">
+			     &nbsp;&#8594;&nbsp; extraction of the natural orbitals (NAT) &nbsp;&#8594;&nbsp; expansion of the ME on the NAT basis
+			   <p style="font-size: 18px" class="fragment">
+			     &nbsp;&#8594;&nbsp; new input for expensive calculations
+			   </p>
+			   </p>
+			   </p> 
+			  </section>
+
+
+			 <section data-auto-animate data-visibility="uncounted" >
+		           <h4 style="font-family: charter">Natural basis</h4>
+			   <img src="media/Nat.png" width="350">
+			   <figcaption>GS energies and charge radii in the HF and NAT basis for IMSRG calculations (PRC 103, 014321)</figcaption>
+			  </section>
+
+			<section   data-visibility="uncounted" data-auto-animate>
+			  <h4 style="font-family: charter">Natural basis</h4>
+			  <figure width="500" style="float:left">
+			  <img src="media/Nat.png" width="400">
+			  </figure>
+			  <br>
+			  <ul width: 1px>
+  			    <li class="fragment">Reduces the size of the basis</li>
+  			    <li class="fragment">Faster model-space convergence of observables</li>
+  			    <li class="fragment">Saves RAM memory and computational time</li>
+			  </ul>
+			  <br>
+			  <p style="font-size: 20px" class="fragment">Our plan:</p>
+			  <ul>
+			    <li class="fragment">
+			      Extend to doubly-open shell nuclei
+			    </li>
+			    <li class="fragment">
+			      Use BMBPT as cheap auxiliary method
+			    </li>
+			    <li class="fragment">
+			      Extend HFB3-SIMPLE to separate treatment of p/n
+			    </li>
+			    <li class="fragment">
+			      Impact several branches in HFB3-SIMPLE code
+			    </li>
+			  </ul>
+		        </section>
+
+			<section data-auto-animate>
+			  <h4 style="font-family: charter">Working plan</h4>
+			    <ul>
+			    <li class="fragment">Deformed bases</li>
+			    <ul width: 1px>
+  			      <li class="fragment">Finalize tests HFB3-SIMPLE code</li>
+			    </ul>
+			    <li class="fragment">Natural orbitals</li>
+			    <ul width: 1px>
+  			      <li class="fragment">Run a preliminary BMBPT calculation starting from the HO matrix elements</li>
+  			      <li class="fragment">Extract the Natural basis from the density matrix</li>
+  			      <li class="fragment">Expand the Hamiltonian on the Natural basis</li>
+  			      <li class="fragment">Run the SCGF calculation on the new basis</li>
+			    </ul>
+			    <li class="fragment">Ab-initio deformed Gorkov-SCGF</li>
+			    <ul width: 1px>
+  			      <li class="fragment">Formal development of the theory</li>
+  			      <li class="fragment">Implementation on top of HFB3-SIMPLE code</li>
+  			      <li class="fragment">Application with the natural orbitals + importance truncation</li>
+  			      <li class="fragment">Symmetry restoration (yet to be formulated)</li>
+			    </ul>
+			    </ul>
+			</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script>
+  		  Reveal.configure({ slideNumber: "c/t" });
+		  Reveal.configure({width: 891, height: 630})
+		</script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+  		  Reveal.initialize({ plugins: [ RevealMath.KaTeX ] });
+		</script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+			});
+		</script>
+	</body>
+</html>
