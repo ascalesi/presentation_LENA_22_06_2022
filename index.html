@@ -14,14 +14,28 @@
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
 <head>
-
+<!--
+.reveal figure img {
+  box-shadow: none;
+  max-width: 100%;
+  object-fit: contain;
+}
+-->
 <style>
 figcaption { caption-side: bottom ;  font-size: 15px; line-height: 0;}
 ul { font-size: 20px; line-height: 2;}
 p    {font-family: charter; color: black;}
+div1    {font-family: charter; color: black;}
 h3 {text-transform: Capitalize !important; letter-spacing: 0.5px !important;}
 h4 {text-transform: Capitalize !important; letter-spacing: 0.5px !important;}
-section    {font-family: charter; color: black;}
+section    {
+font-family: charter;
+color: black;
+}
+img{
+    max-width:12000px;
+    margin: 0 auto;
+}
 img.center {
     display: block;
     margin: 0 auto;
@@ -43,6 +57,26 @@ img.center {
 	</section>
 -->
 
+	<section data-auto-animate-duration=3.0 data-transition="slide-in fade-out">
+	  <h4 style="font-family: charter">Ab initio methods</h4>
+	  <div class="r-stack">
+	  <img data-id="bal" src="media/bally1.pdf" style="max-width:1500px;width:120%;margin-left: -100px;margin-right: 0px;", height=550>
+	  <figcaption   style="position: absolute;top: 200px;right: -50px;">[Figure: B. Bally]</figcaption>
+	  <!--<img data-id="bal" src="media/p1.pdf" width="2500" height="450">-->
+	  <!--<img data-id="bal" src="media/bally1.pdf" style="width:2300px;height:500px;">-->
+	  </div>
+	</section>
+
+	<section  data-auto-animate-duration=3.0 data-transition="fade-in slide-out">
+	  <h4 style="font-family: charter">Ab initio methods</h4>
+	  <div class="r-stack">
+	  <img data-id="bal" src="media/bally2.pdf" style="max-width:1500px;width:120%;margin-left: -100px;margin-right: 0px;", height=550>
+	  <figcaption   style="position: absolute;top: 200px;right: -50px;">[Figure: B. Bally]</figcaption>
+	  <!--<img data-id="bal" src="media/p1.pdf" width="2500" height="450">-->
+	  <!--<img data-id="bal" src="media/bally1.pdf" style="width:2300px;height:500px;">-->
+	  </div>
+	</section>
+
 	<section data-auto-animate>
 	  Outline
 	  <br>
@@ -59,7 +93,7 @@ img.center {
 	  </ul>
 	</section>
 
-	<section data-auto-animate>
+	<section data-auto-animate data-visibility="uncounted">
 	  Outline
 	  <br>
 	  <ul>
@@ -113,9 +147,9 @@ img.center {
 	</section>
 
 
-	<section>
+	<section data-auto-animate>
 	  <h4 style="font-family: charter">
-	  Ab-initio methods</h4>
+	  Ab Initio methods</h4>
 	    <ul>
 	    <!--
 	      <li class="fragment">aim to solve the many-body Schroedinger equation
@@ -686,6 +720,8 @@ img.center {
 			</div>
 		</div>
 
+
+
 		<script src="dist/reveal.js"></script>
 		<script>
   		  Reveal.configure({ slideNumber: "c/t" });
@@ -695,6 +731,7 @@ img.center {
 		<script>
   		  Reveal.initialize({ plugins: [ RevealMath.KaTeX ] });
 		</script>
+
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
@@ -706,7 +743,23 @@ img.center {
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+
 			});
+		</script>
+		<script>
+  		  Reveal.configure({
+  		  // Parallax background image
+  		  parallaxBackgroundImage: 'media/p.jpg', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+
+  		  // Parallax background size
+  		  parallaxBackgroundSize: '3200px 1200px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+
+  		  // Number of pixels to move the parallax background per slide
+  		  // - Calculated automatically unless specified
+  		  // - Set to 0 to disable movement along an axis
+  		  parallaxBackgroundHorizontal: 50,
+  		  parallaxBackgroundVertical: 50
+		  });
 		</script>
 	</body>
 </html>
