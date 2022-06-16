@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/my.css">
+		<link rel="stylesheet" href="dist/theme/sky.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -40,9 +40,12 @@ img.center {
     display: block;
     margin: 0 auto;
 }
+
+var browser = 'Safari';
+
 </style>
 </head>
-  <body>
+  <body style='margin-top:0;margin-left:0;margin-right:0;'>
     <div class="reveal">
       <div class="slides">
 
@@ -52,43 +55,21 @@ img.center {
 	  <p style="font-size: 20px">22 June 2022</p>
 	</section>
 
-<!--
-	<section data-background-image="media/slide.png" data-background-size="1300px">
-	</section>
--->
-
-	<section data-auto-animate-duration=3.0 data-transition="slide-in fade-out">
-	  <h4 style="font-family: charter">Ab initio methods</h4>
-	  <div class="r-stack">
-	  <img data-id="bal" src="media/bally1.pdf" style="max-width:1500px;width:120%;margin-left: -100px;margin-right: 0px;", height=550>
-	  <figcaption   style="position: absolute;top: 200px;right: -50px;">[Figure: B. Bally]</figcaption>
-	  <!--<img data-id="bal" src="media/p1.pdf" width="2500" height="450">-->
-	  <!--<img data-id="bal" src="media/bally1.pdf" style="width:2300px;height:500px;">-->
-	  </div>
-	</section>
-
-	<section  data-auto-animate-duration=3.0 data-transition="fade-in slide-out">
-	  <h4 style="font-family: charter">Ab initio methods</h4>
-	  <div class="r-stack">
-	  <img data-id="bal" src="media/bally2.pdf" style="max-width:1500px;width:120%;margin-left: -100px;margin-right: 0px;", height=550>
-	  <figcaption   style="position: absolute;top: 200px;right: -50px;">[Figure: B. Bally]</figcaption>
-	  <!--<img data-id="bal" src="media/p1.pdf" width="2500" height="450">-->
-	  <!--<img data-id="bal" src="media/bally1.pdf" style="width:2300px;height:500px;">-->
-	  </div>
-	</section>
-
 	<section data-auto-animate>
 	  Outline
 	  <br>
 	  <ul>
 	  <li style="font-size: 30px">
-	    Ab-initio methods - Deformed Gorkov SCGF theory
+	    Ab-initio methods & goal of the project
 	  </li>
 	  <li style="font-size: 30px">
 	    Deformed bases
 	  </li>
 	  <li style="font-size: 30px">
 	    Natural basis
+	  </li>
+	  <li style="font-size: 30px">
+	    Deformed Gorkov SCGF theory
 	  </li>
 	  </ul>
 	</section>
@@ -98,7 +79,7 @@ img.center {
 	  <br>
 	  <ul>
 	  <li style="font-size: 30px">
-	    Ab-initio methods - Deformed Gorkov SCGF theory
+	    Ab-initio methods & goal of the project
 	  </li>
 	  <li style="font-size: 30px">
 	    <span style="color: #808080">Deformed bases</span>
@@ -106,20 +87,54 @@ img.center {
 	  <li style="font-size: 30px">
 	    <span style="color: #808080">Natural basis</span>
 	  </li>
+	  <li style="font-size: 30px">
+	    <span style="color: #808080">Deformed Gorkov SCGF theory</span>
+	  </li>
 	  </ul>
 	</section>
 
 
-	<section data-auto-animate>
+
+<!--
+	<section data-background-image="media/slide.png" data-background-size="1300px">
+	</section>
+-->
+
+	<section data-auto-animate data-transition="slide-in slide-out">
 	  <h4 style="font-family: charter">Ab initio methods</h4>
-	  <img src="media/AbInitio.pdf" width="500">
-	  <figcaption>Ground-state energies in the Oxygen isotopic chain for different <em>Ab Initio methods</em></figcaption>
+	  <div class="r-stack">
+	  <!--
+	  <img data-id="bal" src="media/bally1.pdf" style="max-width:1500px;width:120%;margin-left: -100px;margin-right: 0px;", height=550>
+	  <figcaption   style="position: absolute;top: 200px;right: -50px;">[Figure: B. Bally]</figcaption>
+	  -->
+	  <img  src="media/bally1.pdf" style="max-width:1500px;width:100%;margin-left: 0px;margin-right: 0px;", height=500>
+	  <figcaption  data-id="dat"  style="position: absolute;top: 50px;right: 0px;font-size: 30px;">(~2010)</figcaption>
+	  <figcaption   style="position: absolute;top: 200px;right: 0px;">[Figure: B. Bally]</figcaption>
+	  <!--<img data-id="bal" src="media/p1.pdf" width="2500" height="450">-->
+	  <!--<img data-id="bal" src="media/bally1.pdf" style="width:2300px;height:500px;">-->
+	  </div>
 	</section>
 
-	<section   data-visibility="uncounted" data-auto-animate>
+	<section data-auto-animate data-transition="slide-in slide-out">
+	  <h4 style="font-family: charter">Ab initio methods</h4>
+	  <div class="r-stack">
+	  <!--
+	  <img data-id="bal" src="media/bally1.pdf" style="max-width:1500px;width:120%;margin-left: -100px;margin-right: 0px;", height=550>
+	  <figcaption   style="position: absolute;top: 200px;right: -50px;">[Figure: B. Bally]</figcaption>
+	  -->
+	  <img src="media/AbInitio.pdf", weight=300, height=500>
+	  <figcaption  style="position: absolute;top: 580px;right: 180px;font-size: 15px;">Ground-state energies in the Oxygen isotopic chain for different <em>Ab Initio methods</em></figcaption>
+	  <figcaption  data-id="dat"  style="position: absolute;top: 50px;right: 0px;font-size: 30px;">(~2015)</figcaption>
+	  <!--<img data-id="bal" src="media/p1.pdf" width="2500" height="450">-->
+	  <!--<img data-id="bal" src="media/bally1.pdf" style="width:2300px;height:500px;">-->
+	  </div>
+	</section>
+
+	<section  data-auto-animate data-visibility="uncounted" >
 	  <h4 style="font-family: charter">Ab initio methods</h4>
 	  <figure width="500" style="float:left">
 	  <img src="media/AbInitio.pdf" width="500">
+	  <figcaption  data-id="dat"  style="position: absolute;top: 50px;right: 0px;font-size: 30px;">(~2015)</figcaption>
 	  </figure>
 	  <ul width: 1px>
 	    <br><br>
@@ -129,21 +144,15 @@ img.center {
 	  </ul>
 	</section>
 
-	<section  data-visibility="uncounted" data-auto-animate>
+	<section data-auto-animate  data-transition="slide-in slide-out">
 	  <h4 style="font-family: charter">Ab initio methods</h4>
-	  <figure width="500" style="float:left">
-	  <img src="media/AbInitio.pdf" width="500">
-	  </figure>
-	  <ul width: 1px>
-	    <br><br>
-  	    <li>Sistematically improvable predictions</li>
-  	    <li>Directly linked with QCD</li>
-  	    <li>Predictions for nuclei not exp. accessible</li>
-	  </ul>
-	  <br><br><br><br><br><p  style="font-size: 20px">&#8594; Common goal: to solve the Many-Body Schroedinger equation:
-	      \[\begin{aligned}
-	  H\ket{\Psi_k^A} = E_k\ket{\Psi_k^A} \\
-	  \end{aligned} \]</p>
+	  <div class="r-stack">
+	  <img src="media/bally2.pdf" style="max-width:1500px;width:100%;margin-left: 0px;margin-right: 0px;", height=500>
+	  <figcaption data-id="dat"  style="position: absolute;top: 50px;right: 0px;font-size: 30px;">(~2020)</figcaption>
+	  <figcaption   style="position: absolute;top: 200px;right: 0px;">[Figure: B. Bally]</figcaption>
+	  <!--<img data-id="bal" src="media/p1.pdf" width="2500" height="450">-->
+	  <!--<img data-id="bal" src="media/bally1.pdf" style="width:2300px;height:500px;">-->
+	  </div>
 	</section>
 
 
@@ -151,13 +160,11 @@ img.center {
 	  <h4 style="font-family: charter">
 	  Ab Initio methods</h4>
 	    <ul>
-	    <!--
 	      <li class="fragment">aim to solve the many-body Schroedinger equation
 	      \[\begin{aligned}
 	  H\ket{\Psi_k^A} = E_k\ket{\Psi_k^A} \\
 	  \end{aligned} \]
 	      </li>
-	      -->
 	      <li class="fragment">exact treatment possible only for few methods but limited to light nuclei
 	        <ul>
 		  <li class="fragment">NCSM, CI &nbsp;&nbsp;&nbsp;&#8594;&nbsp;&nbsp;&nbsp; <em>factorial</em> scaling $N!$ &nbsp;&nbsp;&nbsp;($N$: one-body Hilbert space dimension)</li>
@@ -173,6 +180,329 @@ img.center {
 	    </ul>
 	  <img class="fragment" src="media/tichai.png" width="330" class="center">
 	</section>
+
+
+			 <section    data-auto-animate>
+			   <h4 style="font-family: charter">Size of the one-body basis</h4>
+			   <figure width="500">
+			     <img src="media/table2.png" width="630">
+			   </figure>
+			 </section>
+
+			 <section   data-visibility="uncounted" data-auto-animate>
+			   <h4 style="font-family: charter">Size of the one-body basis</h4>
+	  		   <figure width="500" style="float:left">
+			     <img src="media/table2.png" width="500">
+			   </figure>
+	  		     <ul width: 1px  style="float:right"  style="font-size: 5px">
+			       <br>
+  	    		       <li class="fragment">cannot exploit spherical symmetry</li>
+  	    		       <li class="fragment">~10x basis states $N$ at $e_{max}=12$</li>
+  	    		       <li class="fragment">axial symmetry halves $N$</li>
+  	    		       <li class="fragment">expansion methods scale as $N^p$</li>
+  	    		       <li class="fragment">for fixed $p$, $N$ must be decreased</li>
+			       <ul>
+				 <li class="fragment">
+				   importance truncation IT (A. Porro)
+				 </li>
+				 <li class="fragment">
+				   deformed bases (?)
+				 </li>
+				 <li class="fragment">
+				   natural orbitals (NAT)
+				 </li>
+			       </ul>
+	  		   </ul>
+			 </section>
+
+
+
+
+	<section data-auto-animate data-transition="slide-in">
+	  Goal of the project
+	  <p class="fragment" style="font-family: charter; font-size: 30px">
+	    &#8594;&nbsp;Expansion of a polynomial method to doubly open-shell nuclei
+	  </p>
+	  <ul>
+	  <li class="fragment"  style="font-size: 25px">
+	    Development of a numerical code
+	  </li>
+	  <li  class="fragment" style="font-size: 25px">
+	    Optimization (deformed bases, natural bases, IT)
+	  </li>
+	  <li  class="fragment" style="font-size: 25px">
+	    Systematic calculations (GS energies, radii, spectroscopic properties)
+	  </li>
+	  <li  class="fragment" style="font-size: 25px">
+	    Symmetry restoration
+	  </li>
+	  </ul>
+	</section>
+
+	<section data-auto-animate >
+	  Outline
+	  <br>
+	  <ul>
+	  <li style="font-size: 30px">
+	    Ab-initio methods & goal of the project
+	  </li>
+	  <li style="font-size: 30px">
+	    <span style="color: #808080">Deformed bases</span>
+	  </li>
+	  <li style="font-size: 30px">
+	    <span style="color: #808080">Natural basis</span>
+	  </li>
+	  <li style="font-size: 30px">
+	    <span style="color: #808080">Deformed Gorkov SCGF theory</span>
+	  </li>
+	  </ul>
+	</section>
+
+	<section data-auto-animate data-visibility="uncounted">
+	  Outline
+	  <br>
+	  <ul>
+	  <li style="font-size: 30px">
+	    Ab-initio methods & goal of the project
+	  </li>
+	  <li style="font-size: 30px">
+	    Deformed bases
+	  </li>
+	  <li style="font-size: 30px">
+	    <span style="color: #808080">Natural basis</span>
+	  </li>
+	  <li style="font-size: 30px">
+	    <span style="color: #808080">Deformed Gorkov SCGF theory</span>
+	  </li>
+	  </ul>
+	</section>
+
+
+			 <section data-auto-animate  >
+			   <h4 style="font-family: charter">Deformed bases</h4>
+			   <p class="fragment"  style="font-size: 20px">Goal of the test: explore the advantage of deformed bases in beyond mean-field methods</p>
+			   <p style="font-size: 25px"  class="fragment">Definition of basis parameters</p>
+			   <ul>
+			     <li class="fragment">
+			       Spherical HO ($b$, $e_{max}$, #states)
+			     </li>
+			     <li class="fragment">
+			       Deformed HO ($b_\rho$, $b_z$, $Q=b_\rho/b_z$, $e_{max}$, $n_{oscill}$, #states)
+			     </li>
+			   </ul>
+			   <p style="font-size: 25px" class="fragment">Scheme of calculations</p>
+			   <ul>
+			     <li class="fragment">
+			       Reference calculations with spherical basis, $e_{max}=12$
+			     </li>
+			     <li class="fragment">
+			       Deformed bases with additional truncation on $n_{oscill}$
+			     </li>
+			     <li class="fragment">
+			       HFB/BMBPT calculations as a function of $n_{oscill}$
+			     </li>
+			     <li class="fragment">
+			       $\beta_2$-constrained calculations varying $Q$ for fixed $n_{oscill}$
+			     </li>
+			     <li class="fragment">
+			       Calculations showed as relative difference to reference calculation
+			     </li>
+			     <li class="fragment">
+			       $N_{states}$: number of states needed for convergence respect to converged SHO calculation
+			     </li>
+			   </ul>
+			 </section>
+
+			 <section data-auto-animate  >
+			   <h4 style="font-family: charter">Deformed bases</h4>
+			     <img src="media/IMG_Fe56_energy_hfb.png" width="440" style="float:left">
+			     <img src="media/IMG_Fe56_constrained_hfb.png" width="440" style="float:right">
+			   <ul>
+			     <li class="fragment">
+			       No particular advantage with deformed bases for $\beta_2 < 0.30$
+			     </li>
+			     <li class="fragment">
+			       Different bases converging to the same values for high values of $n_{oscill}$
+			     </li>
+			     <li class="fragment">
+			       $Q=1.5$, $\beta_2=0.3/0.4$ &nbsp; &#8594;&nbsp; $N_{states}=47$% (SHO converging at $n_{oscill} = 8$)
+			     </li>
+
+			     <li class="fragment">
+			       $Q=1.5$, $\beta_2=0.5$ &nbsp; &#8594;&nbsp; $N_{states}=27$% (SHO converging at $n_{oscill} = 10$)
+			     </li class="fragment">
+			   </ul>
+			 </section>
+
+			 <section data-auto-animate>
+			   <h4 style="font-family: charter">Deformed bases</h4>
+	  		   <figure width="500">
+			     <img src="media/IMG_Fe56_energy_bmbpt.png" width="440" style="float:left">
+			     <img src="media/IMG_Fe56_constrained_bmbpt.png" width="440" style="float:right">
+			   </figure>
+			   <ul>
+			     <li class="fragment">
+			       No particular advantage with deformed bases for $\beta_2 < 0.40$
+			     </li>
+			     <li class="fragment">
+			       $Q=1.4$, $\beta_2=0.4$ &nbsp; &#8594;&nbsp; $N_{states}=36$% (SHO converging at $n_{oscill} = 12$)
+			     </li>
+			     <!--
+			     <li class="fragment">
+			       Preliminary results: tests with different nuclei required for a full study
+			     </li>
+			     -->
+			     <li class="fragment">
+			       On the typical range of deformation not huge gain
+			     </li>
+			     <li class="fragment">
+			       The gain is smaller at BMBPT than at HFB level
+			     </li>
+			   </ul>
+			 </section>
+
+
+	<section data-auto-animate >
+	  Outline
+	  <br>
+	  <ul>
+	  <li style="font-size: 30px">
+	    Ab-initio methods & goal of the project
+	  </li>
+	  <li style="font-size: 30px">
+	    Deformed bases
+	  </li>
+	  <li style="font-size: 30px">
+	    <span style="color: #808080">Natural basis</span>
+	  </li>
+	  <li style="font-size: 30px">
+	    <span style="color: #808080">Deformed Gorkov SCGF theory</span>
+	  </li>
+	  </ul>
+	</section>
+
+	<section data-auto-animate data-visibility="uncounted">
+	  Outline
+	  <br>
+	  <ul>
+	  <li style="font-size: 30px">
+	    Ab-initio methods & goal of the project
+	  </li>
+	  <li style="font-size: 30px">
+	    Deformed bases
+	  </li>
+	  <li style="font-size: 30px">
+	    Natural basis
+	  </li>
+	  <li style="font-size: 30px">
+	    <span style="color: #808080">Deformed Gorkov SCGF theory</span>
+	  </li>
+	  </ul>
+	</section>
+
+
+			 <section data-auto-animate>
+		           <h4 style="font-family: charter">Natural basis</h4>
+			  </section>
+
+			 <section data-auto-animate data-visibility="uncounted">
+		           <h4 style="font-family: charter">Natural basis</h4>
+			   <p style="font-size: 20px">Basis informed by MB correlations suited to efficiently capture correlations in the wave-functions</p>
+			  </section>
+
+			 <section data-auto-animate data-visibility="uncounted">
+		           <h4 style="font-family: charter">Natural basis</h4>
+			   <p style="font-size: 20px">Basis informed by MB correlations suited to efficiently capture correlations in the wave-functions</p>
+			   <ul>
+			     <li class="fragment">
+			       Main objective: reduce the cost of an expensive calculation
+			     </li>
+			     <li class="fragment">
+			       How it can be done: via an auxiliary cheaper calculation
+			     </li>
+			   </ul>
+			   <img  class="fragment" src="media/Natur2.pdf" width="580">
+			  </section>
+
+
+
+
+
+			 <section data-auto-animate  >
+		           <h4 style="font-family: charter">Natural basis</h4>
+			   <img src="media/Natur.png" width="350">
+			   <figcaption>GS energies and charge radii in the HF and NAT basis for IMSRG calculations (PRC 103, 014321)</figcaption>
+			  </section>
+
+			<section   data-visibility="uncounted" data-auto-animate>
+			  <h4 style="font-family: charter">Natural basis</h4>
+			  <figure width="500" style="float:left">
+			  <img src="media/Natur.png" width="400">
+			  </figure>
+			  <br>
+			  <ul width: 1px>
+  			    <li class="fragment">Reduces the size of the basis</li>
+  			    <li class="fragment">Faster model-space convergence of observables</li>
+  			    <li class="fragment">Saves RAM memory and computational time</li>
+			  </ul>
+			  <br>
+			  <p style="font-size: 20px" class="fragment">Our plan:</p>
+			  <ul>
+			    <li class="fragment">
+			      Extend to doubly-open shell nuclei
+			    </li>
+			    <li class="fragment">
+			      Use BMBPT as cheap auxiliary method
+			    </li>
+			    <li class="fragment">
+			      Extend HFB3-SIMPLE to separate treatment of p/n
+			    </li>
+			    <li class="fragment">
+			      Impact several branches in HFB3-SIMPLE code
+			    </li>
+			  </ul>
+		        </section>
+
+
+	<section data-auto-animate >
+	  Outline
+	  <br>
+	  <ul>
+	  <li style="font-size: 30px">
+	    Ab-initio methods & goal of the project
+	  </li>
+	  <li style="font-size: 30px">
+	    Deformed bases
+	  </li>
+	  <li style="font-size: 30px">
+	    Natural basis
+	  </li>
+	  <li style="font-size: 30px">
+	    <span style="color: #808080">Deformed Gorkov SCGF theory</span>
+	  </li>
+	  </ul>
+	</section>
+
+	<section data-auto-animate data-visibility="uncounted">
+	  Outline
+	  <br>
+	  <ul>
+	  <li style="font-size: 30px">
+	    Ab-initio methods & goal of the project
+	  </li>
+	  <li style="font-size: 30px">
+	    Deformed bases
+	  </li>
+	  <li style="font-size: 30px">
+	    Natural basis
+	  </li>
+	  <li style="font-size: 30px">
+	    Deformed Gorkov SCGF theory
+	  </li>
+	  </ul>
+	</section>
+
+
 
 	<section data-auto-animate>
 	  <h4 style="font-family: charter">
@@ -331,41 +661,32 @@ img.center {
 		     </figure>
 		   </section>
 
-		   <section data-auto-animate>
+		   <section>
 		     <h4 style="font-family: charter">
-		     Optical potentials</h4>
+		     Energies</h4>
+		     <figure width="500">
+		     <img src="media/soma1.pdf" width="500">
+		     <figcaption>Relative ADC(2) errors (theory-experiment) on total binding energies per nucleon (Eur. Phys. J. A. (2021) 57:135)</figcaption>
+		     </figure>
 		   </section>
 
-		   <section data-auto-animate   data-visibility="uncounted" >
+
+		   <section>
 		     <h4 style="font-family: charter">
-		     Optical potentials</h4>
-		     <ul data-id="box">
-		     <li class="fragment">
-		       Feshbach's theory of the optical potential (1958)
-		       <ul>
-			 <li class="fragment">
-			   tool to describe the nucleon-nucleus scattering
-			 </li>
-			 <li class="fragment">
-			   partitions Hilbert space $\mathcal{H}$ in a subspace constituted by one particle added to a core nucleus
-			 </li>
-		       </ul>
-		       </li>
-		       <li class="fragment">
-		         Optical potential: effective interaction that includes the effect of the remaining part of $\mathcal{H}$
-			 </li>
-			 <li class="fragment">
-			   Extension of Feshabch's theory to the possibility of propagating a hole excitation			 
-			 <p><center><big><big><big><big>&#8595;</big></big></big></big></center></p>
-			 <p style="font-size: 20px"><center>optical potential $\equiv$ irreducible self-energy at positive energies $\Sigma^\star$</center></p>
-			 </li>
-			 </ul>
-		       </section>
+		     Charge radii</h4>
+		     <figure width="500">
+		     <img src="media/soma3.png" width="400">
+		     <figcaption>Mean square charge radii compared to available experimental data (Eur. Phys. J. A. (2021) 57:135)</figcaption>
+		     </figure>
+		   </section>
 
 
 		       <section data-auto-animate>
 		         <h4 style="font-family: charter">
 			   Optical potentials</h4>
+			 <p class="fragment" style="font-size: 25px">
+	    		   &#8594;&nbsp;optical potential $\equiv$ irreducible self-energy at positive energies $\Sigma^\star$
+			 </p>
 			 <ul>
 		           <li data-id="box" class="fragment">
 			     <em>Ab initio</em> not yet precise enough to contribute to reaction calculations
@@ -403,11 +724,11 @@ img.center {
 			   <h4 style="font-family: charter">
 			   Optical potentials</h4>
 		           <figure width="400">
-			   <img src="media/SE.png" width="700">
+			   <img src="media/SE.png" width="650">
 			   <figcaption>Separate pw contributions of $J_W$ averaged over $l$-channels with same number of HO orbits in the model space, <sup>40</sup>Ca (PRC 84, 034616)</figcaption>
 			   </figure>
 		         </section>
-
+<!--
 			 <section data-auto-animate>
 			   <h4 style="font-family: charter">
 			   Future developments in the SCGF theory</h4>
@@ -433,7 +754,7 @@ img.center {
 			   </figure>
 			   <figcaption>Deformation of the mean-field ground state resulting from EDF calculation (Bender et al., PRC C73, 034322)</figcaption>
 			 </section>
-
+-->
 			 <section>
 			   <h4 style="font-family: charter">Deformed Gorkov SCGF theory</h4>
 			   <ul>
@@ -446,252 +767,6 @@ img.center {
 			     <li class="fragment"> Based on an $m$-scheme code</li>
 			   </ul>
 		         </section>
-
-
-			 <section    data-auto-animate>
-			   <h4 style="font-family: charter">Size of the one-body basis</h4>
-			   <figure width="500">
-			     <img src="media/table2.png" width="630">
-			   </figure>
-			 </section>
-
-			 <section   data-visibility="uncounted" data-auto-animate>
-			   <h4 style="font-family: charter">Size of the one-body basis</h4>
-	  		   <figure width="500" style="float:left">
-			     <img src="media/table2.png" width="500">
-			   </figure>
-	  		     <ul width: 1px  style="float:right"  style="font-size: 5px">
-			       <br>
-  	    		       <li class="fragment">cannot exploit spherical symmetry</li>
-  	    		       <li class="fragment">~10x basis states $N$ at $e_{max}=12$</li>
-  	    		       <li class="fragment">axial symmetry halves $N$</li>
-  	    		       <li class="fragment">expansion methods scale as $N^p$</li>
-  	    		       <li class="fragment">for fixed $p$, $N$ must be decreased</li>
-			       <ul>
-				 <li class="fragment">
-				   importance truncation IT (A. Porro)
-				 </li>
-				 <li class="fragment">
-				   deformed bases (?)
-				 </li>
-				 <li class="fragment">
-				   natural orbitals (NAT)
-				 </li>
-			       </ul>
-	  		   </ul>
-			 </section>
-
-
-	<section data-auto-animate>
-	  Outline
-	  <br>
-	  <ul>
-	  <li style="font-size: 30px">
-	    Ab-initio methods - Deformed Gorkov SCGF theory
-	  </li>
-	  <li style="font-size: 30px">
-	    <span style="color: #808080">Deformed bases</span>
-	  </li>
-	  <li style="font-size: 30px">
-	    <span style="color: #808080">Natural basis</span>
-	  </li>
-	  </ul>
-	</section>
-
-	<section data-auto-animate data-visibility="uncounted">
-	  Outline
-	  <br>
-	  <ul>
-	  <li style="font-size: 30px">
-	    Ab-initio methods - Deformed Gorkov SCGF theory
-	  </li>
-	  <li style="font-size: 30px">
-	    Deformed bases
-	  </li>
-	  <li style="font-size: 30px">
-	    <span style="color: #808080">Natural basis</span>
-	  </li>
-	  </ul>
-	</section>
-
-
-			 <section data-auto-animate  >
-			   <h4 style="font-family: charter">Deformed bases</h4>
-			   <p class="fragment"  style="font-size: 20px">Goal of the test: explore the advantage of deformed bases in beyond mean-field methods</p>
-			   <p style="font-size: 25px"  class="fragment">Definition of basis parameters</p>
-			   <ul>
-			     <li class="fragment">
-			       Spherical HO ($b$, $e_{max}$, #states)
-			     </li>
-			     <li class="fragment">
-			       Deformed HO ($b_\rho$, $b_z$, $Q=b_\rho/b_z$, $e_{max}$, $n_{oscill}$, #states)
-			     </li>
-			   </ul>
-			   <p style="font-size: 25px" class="fragment">Scheme of calculations</p>
-			   <ul>
-			     <li class="fragment">
-			       Reference calculations with spherical basis, $e_{max}=12$
-			     </li>
-			     <li class="fragment">
-			       Deformed bases with additional truncation on $n_{oscill}$
-			     </li>
-			     <li class="fragment">
-			       HFB/BMBPT calculations as a function of $n_{oscill}$
-			     </li>
-			     <li class="fragment">
-			       $\beta_2$-constrained calculations varying $Q$ for fixed $n_{oscill}$
-			     </li>
-			     <li class="fragment">
-			       Calculations showed as relative difference to reference calculation
-			     </li>
-			     <li class="fragment">
-			       $N_{states}$: number of states needed for convergence respect to converged SHO calculation
-			     </li>
-			   </ul>
-			 </section>
-
-			 <section data-auto-animate  >
-			   <h4 style="font-family: charter">Deformed bases</h4>
-			     <img src="media/IMG_Fe56_energy_hfb.png" width="440" style="float:left">
-			     <img src="media/IMG_Fe56_constrained_hfb.png" width="440" style="float:right">
-			   <ul>
-			     <li class="fragment">
-			       No particular advantage with deformed bases for $\beta_2 < 0.30$
-			     </li>
-			     <li class="fragment">
-			       Different bases converging to the same values for high values of $n_{oscill}$
-			     </li>
-			     <li class="fragment">
-			       $Q=1.5$, $\beta_2=0.3$ &nbsp; &#8594;&nbsp; $N_{states}=47$% (SHO converging at $n_{oscill} = 8$)
-			     </li class="fragment">
-			     <li class="fragment">
-			       $Q=1.5$, $\beta_2=0.4$ &nbsp; &#8594;&nbsp; $N_{states}=47$% (SHO converging at $n_{oscill} = 8$)
-			     </li class="fragment">
-			     <li class="fragment">
-			       $Q=1.5$, $\beta_2=0.5$ &nbsp; &#8594;&nbsp; $N_{states}=27$% (SHO converging at $n_{oscill} = 10$)
-			     </li class="fragment">
-			   </ul>
-			 </section>
-
-			 <section data-auto-animate>
-			   <h4 style="font-family: charter">Deformed bases</h4>
-	  		   <figure width="500">
-			     <img src="media/IMG_Fe56_energy_bmbpt.png" width="440" style="float:left">
-			     <img src="media/IMG_Fe56_constrained_bmbpt.png" width="440" style="float:right">
-			   </figure>
-			   <ul>
-			     <li class="fragment">
-			       No particular advantage with deformed bases for $\beta_2 < 0.40$
-			     </li>
-			     <li class="fragment">
-			       $Q=1.4$, $\beta_2=0.4$ &nbsp; &#8594;&nbsp; $N_{states}=36$% (SHO converging at $n_{oscill} = 12$)
-			     </li>
-			     <li class="fragment">
-			       Preliminary results: tests with different nuclei required for a full study
-			     </li>
-			     <li class="fragment">
-			       On the typical range of deformation not huge gain
-			     </li>
-			     <li class="fragment">
-			       The gain is smaller at BMBPT than at HFB level
-			     </li>
-			   </ul>
-			 </section>
-
-	<section data-auto-animate>
-	  Outline
-	  <br>
-	  <ul>
-	  <li style="font-size: 30px">
-	    Ab-initio methods - Deformed Gorkov SCGF theory
-	  </li>
-	  <li style="font-size: 30px">
-	    Deformed bases
-	  </li>
-	  <li style="font-size: 30px">
-	    <span style="color: #808080">Natural basis</span>
-	  </li>
-	  </ul>
-	</section>
-
-	<section data-auto-animate data-visibility="uncounted">
-	  Outline
-	  <br>
-	  <ul>
-	  <li style="font-size: 30px">
-	    Ab-initio methods - Deformed Gorkov SCGF theory
-	  </li>
-	  <li style="font-size: 30px">
-	    Deformed bases
-	  </li>
-	  <li style="font-size: 30px">
-	    Natural basis
-	  </li>
-	  </ul>
-	</section>
-
-
-			 <section data-auto-animate>
-		           <h4 style="font-family: charter">Natural basis</h4>
-			  </section>
-
-			 <section data-auto-animate data-visibility="uncounted">
-		           <h4 style="font-family: charter">Natural basis</h4>
-			   <p style="font-size: 20px">Basis informed by MB correlations suited to efficiently capture correlations in the wave-functions</p>
-			  </section>
-
-			 <section data-auto-animate data-visibility="uncounted">
-		           <h4 style="font-family: charter">Natural basis</h4>
-			   <p style="font-size: 20px">Basis informed by MB correlations suited to efficiently capture correlations in the wave-functions</p>
-			   <ul>
-			     <li class="fragment">
-			       Main objective: reduce the cost of an expensive calculation
-			     </li>
-			     <li class="fragment">
-			       How it can be done: via an auxiliary cheaper calculation
-			     </li>
-			   </ul>
-			   <img  class="fragment" src="media/Natur2.pdf" width="580">
-			  </section>
-
-
-
-
-
-			 <section data-auto-animate  >
-		           <h4 style="font-family: charter">Natural basis</h4>
-			   <img src="media/Natur.png" width="350">
-			   <figcaption>GS energies and charge radii in the HF and NAT basis for IMSRG calculations (PRC 103, 014321)</figcaption>
-			  </section>
-
-			<section   data-visibility="uncounted" data-auto-animate>
-			  <h4 style="font-family: charter">Natural basis</h4>
-			  <figure width="500" style="float:left">
-			  <img src="media/Natur.png" width="400">
-			  </figure>
-			  <br>
-			  <ul width: 1px>
-  			    <li class="fragment">Reduces the size of the basis</li>
-  			    <li class="fragment">Faster model-space convergence of observables</li>
-  			    <li class="fragment">Saves RAM memory and computational time</li>
-			  </ul>
-			  <br>
-			  <p style="font-size: 20px" class="fragment">Our plan:</p>
-			  <ul>
-			    <li class="fragment">
-			      Extend to doubly-open shell nuclei
-			    </li>
-			    <li class="fragment">
-			      Use BMBPT as cheap auxiliary method
-			    </li>
-			    <li class="fragment">
-			      Extend HFB3-SIMPLE to separate treatment of p/n
-			    </li>
-			    <li class="fragment">
-			      Impact several branches in HFB3-SIMPLE code
-			    </li>
-			  </ul>
-		        </section>
 
 			<section data-auto-animate>
 			  <h4 style="font-family: charter">Working plan</h4>
@@ -725,7 +800,7 @@ img.center {
 		<script src="dist/reveal.js"></script>
 		<script>
   		  Reveal.configure({ slideNumber: "c/t" });
-		  Reveal.configure({width: 891, height: 630})
+		  Reveal.configure({width: 891, height: 630, margin: 0.,})
 		</script>
 		<script src="plugin/math/math.js"></script>
 		<script>
@@ -760,6 +835,9 @@ img.center {
   		  parallaxBackgroundHorizontal: 50,
   		  parallaxBackgroundVertical: 50
 		  });
+		</script>
+		<script>
+		  Reveal.configure({ pdfSeparateFragments: false });
 		</script>
 	</body>
 </html>
