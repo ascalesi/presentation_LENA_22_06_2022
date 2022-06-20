@@ -104,6 +104,7 @@ var browser = 'Safari';
 	  H\ket{\Psi_k^A} = E_k\ket{\Psi_k^A} \\
 	  \end{aligned} \]
 	      </li>
+	      <li class="fragment">$H$ expanded on an orthonormal basis, numerically truncated to $N$</li> 
 	      <li class="fragment"><b><span style="color: #d70000">exact treatment possible<span></b> only for few methods but limited to light nuclei
 	        <ul>
 		  <li class="fragment">NCSM, CI &nbsp;&nbsp;&nbsp;&#8594;&nbsp;&nbsp;&nbsp; <em>factorial</em> scaling $N!$ &nbsp;&nbsp;&nbsp;($N$: one-body Hilbert space dimension)</li>
@@ -112,7 +113,7 @@ var browser = 'Safari';
 		</li>
 	      <li class="fragment"><b><span style="color: #d70000">correlation-expansion methods<span></b> to tackle heavier systems
 	       <ul>
-		  <li class="fragment">CC, BMBPT, SCGF &nbsp;&nbsp;&nbsp;&#8594;&nbsp;&nbsp;&nbsp; <em>polynomial</em> scaling $N^p$
+		  <li class="fragment">CC, (B)MBPT, SCGF &nbsp;&nbsp;&nbsp;&#8594;&nbsp;&nbsp;&nbsp; <em>polynomial</em> scaling $N^p$
 		  </li>
 		</ul>
 		</li>
@@ -164,7 +165,7 @@ var browser = 'Safari';
 	  <!--<img data-id="bal" src="media/bally1.pdf" style="width:2300px;height:500px;">-->
 	  </div>
 	</section>
-
+<!--
 	<section  data-auto-animate data-visibility="uncounted" >
 	  <h4 style="font-family: charter">Ab initio methods</h4>
 	  <figure width="500" style="float:left">
@@ -178,7 +179,7 @@ var browser = 'Safari';
   	    <li class="fragment">Predictions for nuclei not exp. accessible</li>
 	  </ul>
 	</section>
-
+-->
 	<section data-auto-animate  data-transition="slide-in slide-out">
 	  <h4 style="font-family: charter">Ab initio methods</h4>
 	  <div class="r-stack">
@@ -191,11 +192,11 @@ var browser = 'Safari';
 	</section>
 
 
-			 <section data-auto-animate   data-visibility="uncounted" data-auto-animate-restart  >
+			 <section data-auto-animate      >
 			   <h4 style="font-family: charter">
 		           Nuclear deformations along the nuclide chart</h4>
 			 <figure width="500">
-			   <img src="media/bender.png" width="650">
+			   <img data-id="box" src="media/bender.png" width="650">
 			   </figure>
 			   <figcaption>Deformation of the mean-field ground state resulting from EDF calculation (Bender et al., PRC C73, 034322)</figcaption>
 		         </section>
@@ -203,15 +204,18 @@ var browser = 'Safari';
 	<section  data-auto-animate data-visibility="uncounted"  >
 	  <h4 style="font-family: charter">Nuclear deformations along the nuclide chart</h4>
 			 <figure width="500"  style="float:left">
-			   <img src="media/bender.png" width="450">
+			   <img data-id="box" src="media/bender.png" width="600">
 			   </figure>
+	  <div class="r-stack">
+
 	    <ul>
 	    <br><br>
-  	    <li class="fragment">Most of the nuclei are <b><span style="color: #d70000">doubly open-shell<span></b></li>
-  	    <li class="fragment">Necessity of describing them as <b><span style="color: #d70000">deformed<span></b></li>
-  	    <li class="fragment">Through the breaking of $SO(3)$ symmetry</li>
-  	    <li class="fragment">Eventually to be <b><span style="color: #d70000">restored<span></b></li>
+  	    <li class="fragment"  style="position: absolute;top: 150px;right: 10px;"><b><span style="color: #d70000">Doubly open-shell<span></b> nuclei</li>
+  	    <li class="fragment"  style="position: absolute;top: 200px;right: 31px;">Described as <b><span style="color: #d70000">deformed<span></b></li>
+  	    <li class="fragment"  style="position: absolute;top: 250px;right: 2px;">Break of $SO(3)$ symmetry</li>
+  	    <li class="fragment"  style="position: absolute;top: 300px;right: 12px;">Eventually to be <b><span style="color: #d70000">restored<span></b></li>
 	  </ul>
+	  </div>
 	</section>
 
 
@@ -257,7 +261,7 @@ var browser = 'Safari';
 	  </p>
 	  <ul>
 	  <li class="fragment"  style="font-size: 25px">
-	    Development of a <b><span style="color: #d70000">numerical code<span></b>
+	    Development of a <b><span style="color: #d70000">numerical code <span></b>(on top of the HFB3-SIMPLE code)
 	  </li>
 	  <li  class="fragment" style="font-size: 25px">
 	    Optimization (deformed bases, natural bases, IT)
@@ -345,10 +349,10 @@ var browser = 'Safari';
 			   </ul>
 			 </section>
 
-			 <section data-auto-animate  >
+			 <section >
 			   <h4 style="font-family: charter">Deformed bases</h4>
-			     <img src="media/IMG_Fe56_energy_hfb.png" width="440" style="float:left">
-			     <img src="media/IMG_Fe56_constrained_hfb.png" width="440" style="float:right">
+			     <img src="media/IMG_Fe56_energy_hfb.png" width="439" style="float:left">
+			     <img src="media/IMG_Fe56_constrained_hfb.png" width="439" style="float:right">
 			   <ul>
 			     <li class="fragment">
 			       No particular advantage with deformed bases for $\beta_2 < 0.30$
