@@ -104,22 +104,24 @@ var browser = 'Safari';
 	  H\ket{\Psi_k^A} = E_k\ket{\Psi_k^A} \\
 	  \end{aligned} \]
 	      </li>
-	      <li class="fragment">$H$ expanded on an orthonormal basis, numerically truncated to $N$</li> 
+	      <li class="fragment">$H$ expanded on an orthonormal basis, numerically truncated to $N$
+<span style="position: absolute;top: 140px;right: 150px;font-size: 35px;">&#8599;</span><span style="position: absolute;top: 130px;right: 35px;font-size: 15px;">one-body Hilbert space dimension</span>
+	      </li> 
 	      <li class="fragment"><b><span style="color: #d70000">exact treatment possible<span></b> only for few methods but limited to light nuclei
 	        <ul>
-		  <li class="fragment">NCSM, CI &nbsp;&nbsp;&nbsp;&#8594;&nbsp;&nbsp;&nbsp; <em>factorial</em> scaling $N!$ &nbsp;&nbsp;&nbsp;($N$: one-body Hilbert space dimension)</li>
+		  <li class="fragment">NCSM, CI &nbsp;&nbsp;&nbsp;&#8594;&nbsp;&nbsp;&nbsp; <em>factorial</em> scaling $N!$</li>
 		  <li class="fragment">Montecarlo &nbsp;&nbsp;&nbsp;&#8594;&nbsp;&nbsp;&nbsp; <em>exponential</em> scaling $2^N$</li>
 		</ul>
 		</li>
 	      <li class="fragment"><b><span style="color: #d70000">correlation-expansion methods<span></b> to tackle heavier systems
 	       <ul>
-		  <li class="fragment">CC, (B)MBPT, SCGF &nbsp;&nbsp;&nbsp;&#8594;&nbsp;&nbsp;&nbsp; <em>polynomial</em> scaling $N^p$
+		  <li class="fragment">CC, MBPT, IM-SRG, SCGF &nbsp;&nbsp;&nbsp;&#8594;&nbsp;&nbsp;&nbsp; <em>polynomial</em> scaling $N^p$
 		  </li>
 		</ul>
 		</li>
 	      <li class="fragment"><b><span style="color: #d70000">valence space methods<span></b>
 	       <ul>
-		  <li class="fragment">Ab initio shell model &nbsp;&nbsp;&nbsp;&#8594;&nbsp;&nbsp;&nbsp; <em>mixed</em> scaling $N! + N^p$
+		  <li class="fragment">VS-IM-SRG &nbsp;&nbsp;&nbsp;&#8594;&nbsp;&nbsp;&nbsp; <em>mixed</em> scaling $N^p + N_{val}!$
 		  </li>
 		</ul>
 		</li>
@@ -658,8 +660,8 @@ var browser = 'Safari';
   		       <li class="fragment">
 		       From the one-body Green's function (<b><span style="color: #d70000">Lehmann's representation</span></b>):<br>
 		         \[\begin{aligned}
-			 g_{\alpha\beta}(E) = \sum_n \dfrac{\braket{\Psi_0^A|c_\alpha|\Psi_n^{A+1}}\braket{\Psi_n^{A+1}|c_\beta^\dagger|\Psi_0^A}}{E-\textcolor{teal}{(E_n^{A+1}-E_0^A)}+i\eta}\\
-			 + \sum_k \dfrac{\braket{\Psi_0^A|c_\beta^\dagger|\Psi_n^{A-1}}\braket{\Psi_k^{A-1}|c_\alpha|\Psi_0^A}}{E-(\textcolor{teal}{E_0^A-E_k^{A-1}})-i\eta}
+			 g_{\alpha\beta}(E) = \sum_n \dfrac{\textcolor{blue}{\braket{\Psi_0^A|c_\alpha|\Psi_n^{A+1}}}\textcolor{blue}{\braket{\Psi_n^{A+1}|c_\beta^\dagger|\Psi_0^A}}}{E-\textcolor{teal}{(E_n^{A+1}-E_0^A)}+i\eta}\\
+				 + \sum_k \dfrac{\textcolor{blue}{\braket{\Psi_0^A|c_\beta^\dagger|\Psi_n^{A-1}}}\textcolor{blue}{\braket{\Psi_k^{A-1}|c_\alpha|\Psi_0^A}}}{E-(\textcolor{teal}{E_0^A-E_k^{A-1}})-i\eta}
 			 \end{aligned} \]
 		       </li>
 		     <ul>
@@ -671,7 +673,7 @@ var browser = 'Safari';
 		         matter/charge <b><span style="color: #d77d00">radii</span> and distributions</b>
 		       </li>
 		       <li class="fragment">
-			 <b><span style="color: #d70000">spectroscopy</span></b> of $A$ to odd-even $A\pm1$ systems
+			 <b><span style="color: #d70000">spectroscopy</span></b> of $A$ to odd-even $A\pm1$ systems (<span style="color: #009999">separation energies</span>, <span style="color: #0033cc">spectroscopic factors</span>)
 		       </li>
 		     </ul>
   		     <li class="fragment">
@@ -707,6 +709,7 @@ var browser = 'Safari';
 		     </figure>
 		   </section>
 
+<section>
 		   <section>
 		     <h4 style="font-family: charter">
 		     <span span style="color: #d70000">Excitation spectra of odd-even nuclei</span></h4>
@@ -716,7 +719,32 @@ var browser = 'Safari';
 		     </figure>
 		   </section>
 
+		   <section data-transition="none">
+		     <h4 style="font-family: charter">
+		     <span span style="color: #d70000">Spectroscopic factors</span> (ADC1)</h4>
+		     <figure width="500">
+		     <img data-id="bou" src="media/gfplot_Si34_neutron_ADC1.pdf" width="600">
+		     <figcaption>Neutron spectral strength distribution in $^{34}$Si computed with the NNLOsat interaction. Dashed line: Fermi energy. (Front. Phys. 8:340)</figcaption>
+		     </figure>
+		   </section>
 
+		   <section data-transition="none">
+		     <h4 style="font-family: charter">
+		     <span span style="color: #d70000">Spectroscopic factors</span> (ADC2)</h4>
+		     <figure width="500">
+		     <img data-id="bou" src="media/gfplot_Si34_neutron_ADC2.pdf" width="600">
+		     <figcaption>Neutron spectral strength distribution in $^{34}$Si computed with the NNLOsat interaction. Dashed line: Fermi energy. (Front. Phys. 8:340)</figcaption>
+		     </figure>
+		   </section>
+
+		   <section data-transition="none">
+		     <h4 style="font-family: charter">
+		     <span span style="color: #d70000">Spectroscopic factors</span> (ADC3)</h4>
+		     <figure width="500">
+			     <img data-id="bou" src="media/gfplot_Si34_neutron_ADC3.pdf" width="600">
+		     <figcaption>Neutron spectral strength distribution in $^{34}$Si computed with the NNLOsat interaction. Dashed line: Fermi energy. (Front. Phys. 8:340)</figcaption>
+		     </figure>
+		   </section>
 
 		       <section data-auto-animate>
 		         <h4 style="font-family: charter">
@@ -765,6 +793,9 @@ var browser = 'Safari';
 			   <figcaption>Separate pw contributions of $J_W$ averaged over $l$-channels with same number of HO orbits in the model space, <sup>40</sup>Ca (PRC 84, 034616)</figcaption>
 			   </figure>
 		         </section>
+
+</section>
+
 <!--
 			 <section data-auto-animate>
 			   <h4 style="font-family: charter">

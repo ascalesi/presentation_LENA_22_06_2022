@@ -32,66 +32,6 @@ html.reveal-full-page {
 	background-color: #fff;
 	color: #000;
 }
-/*
-.reveal figure, .reveal section {
-  height: inherit; }
-
-.reveal section img {
-  border: none;
-  margin: 0; }
-
-.reveal img, .reveal video, .reveal iframe {
-  max-height: 100%;
-  height: 100%; }
-
-.reveal figure img {
-  box-shadow: none;
-  max-width: 100%;
-  object-fit: contain;
-}
-*/
-/* Container holding the image and the text */
-.container {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-/* Bottom left text */
-.bottom-left {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
-}
-
-/* Top left text */
-.top-left {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-}
-
-/* Top right text */
-.top-right {
-  position: absolute;
-  top: 8px;
-  right: 16px;
-}
-
-/* Bottom right text */
-.bottom-right {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-}
-
-/* Centered text */
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 // Force the presentation to cover the full viewport when we
 // enter fullscreen mode. Fixes sizing issues in Safari.
